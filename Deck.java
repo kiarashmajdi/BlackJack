@@ -2,11 +2,13 @@ import java.util.*;
 
 public class Deck {
     public static Card[] cards = new Card[52];
+    private static int cardPointer = 0;
 
     
 
     public Deck(){
-        deck();
+        this.deck();
+        this.shuffle();
     }
 
     public void deck(){
@@ -24,6 +26,11 @@ public class Deck {
             Util.swapCards(this, rand.nextInt(52), rand.nextInt(52));
         }
         
+    }
+
+    public Card nextCard(){
+        cardPointer++;
+        return cards[cardPointer - 1];
     }
 
 }

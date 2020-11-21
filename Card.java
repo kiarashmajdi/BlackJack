@@ -9,6 +9,7 @@ public class Card {
     public Card(int number, int coat){
         this.number = number;
         this.coat = coat;
+        this.setPower();
     }
 
 
