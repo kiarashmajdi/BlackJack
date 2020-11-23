@@ -23,7 +23,7 @@ public class Deck {
     public void shuffle(){
         Random rand = new Random();
         for (int h = 0; h < 1000; h++){
-            Util.swapCards(this, rand.nextInt(52), rand.nextInt(52));
+            Util.swap(this, rand.nextInt(52), rand.nextInt(52));
         }
         
     }

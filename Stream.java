@@ -5,10 +5,10 @@ public class Stream {
     private int[] powerList;
     public boolean isStarted = false;
     public boolean isFinalized = false;
-    public int bet;
 
-    public Stream(int bet){
-        this.bet = bet;
+
+    public Stream(){
+        this.cards = new ArrayList<Card>();
     }
 
     public void addCard(Card card){
@@ -16,13 +16,7 @@ public class Stream {
         powerArray();
     }
     
-    public boolean checkSame() {
-        if (cards.size() == 2 && cards.get(0) == cards.get(1)){
-            return true;
-        }
-        return false;
 
-    }
 
     public void powerArray(){
         this.powerList = new int[cards.size()];
@@ -35,7 +29,7 @@ public class Stream {
 
     public void checkBurn() {
         int totalPower = powerSum();
-        while (totalPower < 21){
+        while (totalPower > 21){
             boolean isChanged = false;
             for (int h = 0; h < this.cards.size(); h++){
                 if (this.cards.get(h).power == 11){

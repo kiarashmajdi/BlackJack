@@ -14,19 +14,21 @@ public class Card {
 
 
     public String toString(){
-        return (numbers[this.power - 1] + " " + suits[this.coat - 1]);
+        return (numbers[this.number - 1] + " " + suits[this.coat - 1]);
     }
 
     public void setPower(){
         try{
-            this.power = Integer.parseInt(numbers[this.number]);
+            this.power = Integer.parseInt(numbers[this.number - 1]);
         }
 
         catch (Exception e){
-            if (this.number == 12){
+            if (this.number == 13){
                 this.power = 11;
             }
-            this.power = 10;
+            else{
+                this.power = 10;
+            }
         }
     }
 }
